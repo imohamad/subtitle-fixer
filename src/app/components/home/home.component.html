@@ -1,0 +1,26 @@
+<nav>
+    <p>Subtitle Fixer</p>
+    <ul>
+        <li class="icon-minus" (click)="minimizeWindow()"></li>
+        <li class="icon-cancel" (click)="closeWindow()"></li>
+    </ul>
+</nav>
+
+
+<file-drop (onFileDrop)="dropped($event)" (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" customstyle="drag-zone">
+
+</file-drop>
+
+<div class="info">
+    <div class="icon-info-circled-alt">
+        <p class="links">by
+            <a (click)="openBrowser('http://imohamaad.github.io')">imohamad</a> -
+            <a (click)="openBrowser('https://github.com/imohamaad/subtitle-fixer')">Github</a>
+        </p>
+    </div>
+</div>
+<div class="app-text">
+    <span class="icon-beaker"></span>
+    <p id="show">Drag your SRT file here!</p>
+    <p class="status">{{status}}</p>
+</div>

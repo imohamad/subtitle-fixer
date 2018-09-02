@@ -1,0 +1,64 @@
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-size: 100%;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: normal;
+  font-style: normal;
+}
+a {
+  color: #ffffff;
+}
+.clearfix {
+  clear: both;
+}
+body {
+  background-color: rgb(221, 219, 219);
+  font-family: "RopaSans", sans-serif;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+.drag-zone {
+  height: 173px;
+}
+file-drop {
+  position: relative;
+  z-index: 20;
+}
+.app-text {
+  margin-top: -130px;
+  color: rgb(107, 106, 106);
+  text-align: center;
+}
+.app-text .icon-beaker {
+  font-size: 40px;
+}
+.app-text p {
+  margin-top: 5px;
+  font-size: 21px;
+}
+.status {
+  text-align: center;
+  color: rgb(107, 106, 106);
+  font-size: 18px !important;
+}
+.over {
+  background-image: url("./assets/images/bg.jpeg");
+  opacity: 0.1;
+  background-position: 0px -500px;
+  position: relative;
+  z-index: 200;
+}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'RopaSans';
+    src: url('../fonts/RopaSans-Regular.woff2') format('woff2'),
+    url('../fonts/RopaSans-Regular.woff') format('woff'),
+    url('../fonts/RopaSans-Regular.ttf') format('truetype');
+  
+    font-weight: normal;
+    font-style: normal;
+  }
