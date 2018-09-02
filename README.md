@@ -11,6 +11,6 @@ This project was generated with [Angular](https://angular.io) version 6.1.2 and 
  - importing multiple subtitles or folder
  - fast process
 
-[Download app]()
+[Download app](https://github.com/imohamaad/subtitle-fixer/tree/master/release%20app)
 ## Further help
 visit [imohamad](http://imohamad.ml) or send e-mail: [mohamad.partizan@gmail.com](mailto:mohamad.partizan@gmail.com)
