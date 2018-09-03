@@ -1,6 +1,6 @@
 
 ## Subtitle Fixer 
-[![badge](https://img.shields.io/badge/version-1.0-green.svg)](https://github.com/imohamaad/subtitle-fixer/tree/master/release%20app) [![badge](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/imohamaad/subtitle-fixer/blob/master/LICENSE)
+[![badge](https://img.shields.io/badge/version-1.0-green.svg)](https://github.com/imohamaad/subtitle-fixer/tree/master/release%20app) [![badge](https://img.shields.io/badge/license-MIT-yellow.svg)](https://github.com/imohamaad/subtitle-fixer/blob/master/LICENSE)
 
 desktop app for modify subtitle encoding with angular and electron. 
 
