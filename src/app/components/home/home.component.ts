@@ -3,6 +3,7 @@ import { ElectronService } from "../../providers/electron.service";
 var iconv = require("iconv-lite");
 var path = require("path");
 import { shell } from "electron";
+const isUtf8 = require("isutf8");
 
 import { UploadEvent, UploadFile, FileSystemFileEntry } from "ngx-file-drop";
 
@@ -38,7 +39,7 @@ export class HomeComponent implements OnInit {
         const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
         fileEntry.file((file: File) => {
           this.status = "Subtitle Fixed";
-          this.changeEncoding(file.path, file.name);
+          this.changeEncoding(file.path, file.name); //send file path
         });
       } else {
         this.status = "Is Directory.";
@@ -60,9 +61,16 @@ export class HomeComponent implements OnInit {
     }
     const content = this.electron.fs.readFileSync(subtitlePath);
 
-    this.electron.fs.writeFileSync(
-      `${path.dirname(subtitlePath)}\\fixed_${subtitleName}`,
-      iconv.decode(content, "windows-1256")
-    );
+    if (isUtf8(content)) {
+      this.electron.fs.writeFileSync(
+        `${path.dirname(subtitlePath)}\\fixed_${subtitleName}`,
+        content
+      );
+    } else {
+      this.electron.fs.writeFileSync(
+        `${path.dirname(subtitlePath)}\\fixed_${subtitleName}`,
+        iconv.decode(content, "windows-1256")
+      );
+    }
   }
 }
