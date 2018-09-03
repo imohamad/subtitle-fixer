@@ -21,7 +21,7 @@ a {
   clear: both;
 }
 body {
-  background-color: rgb(221, 219, 219);
+  background-color: transparent;
   font-family: "RopaSans", sans-serif;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -58,7 +58,13 @@ file-drop {
 .over {
   background-image: url("./assets/images/bg.jpeg");
   opacity: 0.1;
-  background-position: 0px -500px;
+  background-position: 0px -520px;
   position: relative;
   z-index: 200;
+  -webkit-border-bottom-right-radius: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }

@@ -9,11 +9,12 @@ serve = args.some(val => val === "--serve");
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 500,
-    height: 200,
+    width: 520,
+    height: 220,
     resizable: false,
     frame: false,
-    title: "Subtitle Fixer"
+    title: "Subtitle Fixer",
+    transparent: true
   });
 
   win.webContents.on("will-navigate", ev => {
