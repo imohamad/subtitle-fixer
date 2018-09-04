@@ -23,6 +23,11 @@
     <div class="app-text">
         <span class="icon-beaker"></span>
         <p id="show">Drag your SRT file here!</p>
-        <p class="status">{{status}}</p>
+        <p class="status loading" *ngIf="loading">Converting
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </p>
+        <p class="status" *ngIf="!loading">{{status}}</p>
     </div>
 </div>

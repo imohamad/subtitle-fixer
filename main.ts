@@ -12,6 +12,10 @@ function createWindow() {
     width: 520,
     height: 220,
     resizable: false,
+    fullscreen: false,
+    fullscreenable: false,
+    fullscreenWindowTitle: false,
+    simpleFullscreen: false,
     frame: false,
     title: "Subtitle Fixer",
     transparent: true

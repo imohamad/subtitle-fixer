@@ -4,6 +4,7 @@ var iconv = require("iconv-lite");
 var path = require("path");
 import { shell } from "electron";
 const isUtf8 = require("isutf8");
+import { convert } from "arabic-to-persian";
 
 import { UploadEvent, UploadFile, FileSystemFileEntry } from "ngx-file-drop";
 
@@ -15,6 +16,7 @@ import { UploadEvent, UploadFile, FileSystemFileEntry } from "ngx-file-drop";
 export class HomeComponent implements OnInit {
   status: String = "";
   public files: UploadFile[] = [];
+  loading: boolean;
 
   constructor(private electron: ElectronService) {}
 
@@ -38,7 +40,7 @@ export class HomeComponent implements OnInit {
       if (droppedFile.fileEntry.isFile) {
         const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
         fileEntry.file((file: File) => {
-          this.status = "Subtitle Fixed";
+          this.loading = true;
           this.changeEncoding(file.path, file.name); //send file path
         });
       } else {
@@ -59,18 +61,41 @@ export class HomeComponent implements OnInit {
     if (path.extname(subtitlePath) !== ".srt") {
       return (this.status = "file format must be SRT!");
     }
-    const content = this.electron.fs.readFileSync(subtitlePath);
 
-    if (isUtf8(content)) {
-      this.electron.fs.writeFileSync(
-        `${path.dirname(subtitlePath)}\\fixed_${subtitleName}`,
-        content
-      );
-    } else {
-      this.electron.fs.writeFileSync(
-        `${path.dirname(subtitlePath)}\\fixed_${subtitleName}`,
-        iconv.decode(content, "windows-1256")
-      );
-    }
+    this.electron.fs.readFile(subtitlePath, (error, content) => {
+      if (error) {
+        throw error;
+      } else {
+        if (isUtf8(content)) {
+          this.electron.fs.writeFile(
+            `${path.dirname(subtitlePath)}\\fixed_${subtitleName}`,
+            convert(content.toString()),
+            error => {
+              if (error) {
+                throw error;
+              } else {
+                this.loading = false;
+                this.status = "Subtitle Fixed";
+              }
+            }
+          );
+        } else {
+          content = iconv.decode(content, "windows-1256");
+
+          this.electron.fs.writeFile(
+            `${path.dirname(subtitlePath)}\\fixed_${subtitleName}`,
+            convert(content.toString()),
+            error => {
+              if (error) {
+                throw error;
+              } else {
+                this.loading = false;
+                this.status = "Subtitle Fixed";
+              }
+            }
+          );
+        }
+      }
+    });
   }
 }

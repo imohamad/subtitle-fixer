@@ -1,40 +1,46 @@
 {
   "productName": "Subtitle Fixer",
+  "appId": "ml.imohamad.subtitlefixer",
+  "buildVersion": "1.0",
   "directories": {
     "output": "release/"
   },
-    "files": [
-        "**/*",
-        "!*.ts",
-        "!*.code-workspace",
-        "!LICENSE.md",
-        "!package.json",
-        "!package-lock.json",
-        "!src/",
-        "!e2e/",
-        "!hooks/",
-        "!.angular-cli.json",
-        "!_config.yml",
-        "!karma.conf.js",
-        "!tsconfig.json",
-        "!tslint.json"
-    ],
+  "files": [
+    "**/*",
+    "!*.ts",
+    "!*.code-workspace",
+    "!LICENSE.md",
+    "!package.json",
+    "!package-lock.json",
+    "!src/",
+    "!e2e/",
+    "!hooks/",
+    "!.angular-cli.json",
+    "!_config.yml",
+    "!karma.conf.js",
+    "!tsconfig.json",
+    "!tslint.json"
+  ],
+
   "win": {
     "icon": "build/icon.ico",
-    "target": [
-      "nsis"
-    ]
+    "target": ["nsis"]
+  },
+  "nsis": {
+    "installerSidebar": "build/installer-side.bmp",
+    "uninstallerSidebar": "build/installer-side.bmp",
+    "oneClick": false,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "allowToChangeInstallationDirectory": true
   },
   "mac": {
+    "icon": "build/icon.icns",
     "icon": "dist",
-    "target": [
-      "dmg"
-    ]
+    "target": ["dmg"]
   },
   "linux": {
     "icon": "dist",
-    "target": [
-      "AppImage"
-    ]
+    "target": ["AppImage"]
   }
 }

@@ -37,6 +37,7 @@
     "e2e": "npm run postinstall:web && ng e2e"
   },
   "dependencies": {
+    "arabic-to-persian": "^1.1.0",
     "iconv-lite": "^0.4.24",
     "isutf8": "^2.0.2",
     "ngx-file-drop": "^4.0.6"

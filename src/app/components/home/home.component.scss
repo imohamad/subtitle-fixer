@@ -1,7 +1,7 @@
 .warp {
   width: 500px;
   height: 200px;
-  margin: 6px auto auto auto;
+  margin: 8px auto auto auto;
   background-color: rgb(221, 219, 219);
   -webkit-border-radius: 13px;
   -webkit-border-bottom-right-radius: 10px;
@@ -21,7 +21,6 @@ nav {
   height: 27px;
   background-color: rgb(71, 70, 70);
   -webkit-app-region: drag;
-
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topleft: 10px;
@@ -94,5 +93,59 @@ nav {
   color: rgb(105, 105, 105);
   p {
     display: inherit;
+  }
+}
+
+.loading span {
+  display: inline-block;
+  -webkit-animation: fadeInOut 500ms infinite alternate;
+  -moz-animation: fadeInOut 500ms infinite alternate;
+  -ms-animation: fadeInOut 500ms infinite alternate;
+  animation: fadeInOut 500ms infinite alternate;
+  font-size: 20px;
+
+  &:nth-child(2) {
+    -webkit-animation-delay: 600ms;
+    -moz-animation-delay: 600ms;
+    -ms-animation-delay: 600ms;
+    animation-delay: 600ms;
+  }
+  &:nth-child(3) {
+    -webkit-animation-delay: 700ms;
+    -moz-animation-delay: 700ms;
+    -ms-animation-delay: 700ms;
+    animation-delay: 700ms;
+  }
+}
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
