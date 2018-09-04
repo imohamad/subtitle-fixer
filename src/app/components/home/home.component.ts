@@ -59,6 +59,7 @@ export class HomeComponent implements OnInit {
 
   changeEncoding(subtitlePath: string, subtitleName: string) {
     if (path.extname(subtitlePath) !== ".srt") {
+      this.loading = false;
       return (this.status = "file format must be SRT!");
     }
 
