@@ -11,7 +11,7 @@ This project was generated with [Angular](https://angular.io) version 6.1.2 and 
 
   
 
-![App Preview](http://dharmalab.ml/github/subtitle-fixer-github.jpg)
+![App Preview](https://dl.dropboxusercontent.com/s/lua3atm4fxzxh1k/subtitle-fixer.jpg)
 
   
 
