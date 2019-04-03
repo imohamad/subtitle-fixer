@@ -32,4 +32,4 @@ This project was generated with [Angular](https://angular.io) version 6.1.2 and 
 
 ## Further help
 
-visit [imohamad](http://imohamad.ml) or send e-mail: [mohamad.partizan@gmail.com](mailto:mohamad.partizan@gmail.com)
+visit [mohamad](https://mohamad.js.org) or send e-mail: [deylami.developer@gmail.com](mailto:deylami.developer@gmail.com)
